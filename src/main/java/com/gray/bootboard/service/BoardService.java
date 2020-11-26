@@ -24,7 +24,7 @@ public class BoardService { /* Repository를 사용하여 Service를 구현, For
 
     @Transactional
     public List<BoardDao> getBoardList() {
-        List<Board> boardList = boardRepository.findAll();
+        List<Board> boardList = boardRepository.findAll();/* findAll()은 제공된 함수 */
         List<BoardDao> boardDaoList = new ArrayList<>();
 
         for(Board board : boardList) {
@@ -48,7 +48,7 @@ public class BoardService { /* Repository를 사용하여 Service를 구현, For
                 .id(board.getId())
                 .author(board.getAuthor())
                 .title(board.getTitle())
-                .content(board.getTitle())
+                .content(board.getContent())
                 .createdDate(board.getCreatedDate())
                 .build();
         return boardDao;
